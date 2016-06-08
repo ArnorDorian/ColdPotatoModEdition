@@ -1,6 +1,6 @@
 # Cold Potato Mod Edition
 ________________________________________________
-本Mod为TML小组命令方块地图Cold Potato的Mod版本
+本Mod为The Minecraft Lover小组命令方块地图Cold Potato的Mod版本
 
 | 名称 | 版本号 |
 | ---------- | --------- |
