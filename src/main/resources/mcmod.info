@@ -1,0 +1,16 @@
+[
+{
+  "modid": "cp",
+  "name": "Cold Potato",
+  "description": "Cold Potato's Mod Edition",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Potter_Lee","Arnor_Dorian"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

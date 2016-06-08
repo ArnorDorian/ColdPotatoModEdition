@@ -1,0 +1,8 @@
+item.scalpel.name=手术刀
+item.unnamed_sword.name=
+
+info.unnamed_sword=这把剑不需要名字
+
+entity.Scalpel.name=手术刀
+
+death.attack.byScalpel=%1$s 被 %2$s 丢出的手术刀杀死了

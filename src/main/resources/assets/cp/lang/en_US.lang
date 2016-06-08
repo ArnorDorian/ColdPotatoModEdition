@@ -1,0 +1,8 @@
+item.scalpel.name=Scalpel
+item.unnamed_sword.name=
+
+info.unnamed_sword=This sword has no need to have a name.
+
+entity.Scalpel.name=Scalpel
+
+death.attack.byScalpel=%1$s has been slained by %2$s's throwing scalpel
