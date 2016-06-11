@@ -4,11 +4,9 @@ import com.github.ArnorDorian.cp.cp;
 import com.github.ArnorDorian.cp.items.ItemLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -22,6 +20,7 @@ public class EntityLoader {
 
     public EntityLoader() {
         registerEntity(EntityScalpel.class, "Scalpel", 64, 10, true);
+        registerEntity(EntityCheekGrenade.class, "CheekGrenade", 64, 10, true);
     }
 
     public static void registerEntity(Class<? extends Entity> entityClass, String name, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
@@ -36,7 +35,13 @@ public class EntityLoader {
         registerEntityRender(EntityScalpel.class, new IRenderFactory<EntityScalpel>() {
             @Override
             public Render<? super EntityScalpel> createRenderFor(RenderManager manager) {
-               return new RenderSnowball<EntityScalpel>(manager,ItemLoader.scalpel,Minecraft.getMinecraft().getRenderItem());
+                return new RenderSnowball<EntityScalpel>(manager, ItemLoader.scalpel, Minecraft.getMinecraft().getRenderItem());
+            }
+        });
+        registerEntityRender(EntityCheekGrenade.class, new IRenderFactory() {
+            @Override
+            public Render createRenderFor(RenderManager manager) {
+                return new RenderSnowball<EntityCheekGrenade>(manager, ItemLoader.grenade, Minecraft.getMinecraft().getRenderItem());
             }
         });
     }

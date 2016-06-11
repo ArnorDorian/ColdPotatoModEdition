@@ -16,16 +16,19 @@ public class ItemLoader {
 
     public static Item scalpel = new ItemScalpel();
     public static ItemSword unnamed_sword = new ItemUnnamedSword();
+    public static Item grenade = new ItemCheekGrenade();
 
     public ItemLoader(FMLPreInitializationEvent event) {
         register(scalpel, "scalpel");
-        register(unnamed_sword,"unnamed_sword");
+        register(unnamed_sword, "unnamed_sword");
+        register(grenade, "cheek_grenade");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerRenders() {
-        registerRender(scalpel);
-        registerRender(unnamed_sword);
+        registerRender(scalpel, 0);
+        registerRender(unnamed_sword, 0);
+        registerRender(grenade, 0);
     }
 
     private void register(Item item, String name) {
@@ -33,8 +36,8 @@ public class ItemLoader {
     }
 
     @SideOnly(Side.CLIENT)
-    private static void registerRender(Item item) {
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+    private static void registerRender(Item item, int metadata) {
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, metadata, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 
 }
