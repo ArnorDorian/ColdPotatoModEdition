@@ -2,6 +2,11 @@ item.scalpel.name=手术刀
 item.unnamed_sword.name=
 item.cheek_grenade.name=猴腮雷
 
+commands.teamtell.usage=/teamtell 或 /tt 或 / <信息>
+commands.teamtell.display.null=<[队伍]%s> %s
+commands.teamtell.display.blue=<[§9队伍§r]%s> %s
+commands.teamtell.display.red=<[§c队伍§r]%s> %s
+
 info.unnamed_sword=这把剑不需要名字
 
 entity.Scalpel.name=手术刀

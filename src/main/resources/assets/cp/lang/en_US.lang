@@ -2,6 +2,11 @@ item.scalpel.name=Scalpel
 item.unnamed_sword.name=
 item.cheek_grenade.name=Monkey's Cheek Grenade
 
+commands.teamtell.usage=/teamtell OR /tt OR / <message>
+commands.teamtell.display.null=<[Team]%s> %s
+commands.teamtell.display.blue=<[§9Team§r]%s> %s
+commands.teamtell.display.red=<[§cTeam§r]%s> %s
+
 info.unnamed_sword=This sword has no need to have a name.
 
 entity.Scalpel.name=Scalpel

@@ -36,6 +36,15 @@ public class ItemScalpel extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+        if (playerIn.getTeam() != null) {
+            Collection<String> collectionlist = playerIn.getTeam().getMembershipCollection();
+            String[] list = collectionlist.toArray(new String[collectionlist.size()]);
+            for (String name : list) {
+                System.out.println(name);
+            }
+        }
+
+
         if (playerIn.isCreative() || itemStackIn.getItemDamage() < itemStackIn.getMaxDamage()) {
             worldIn.playSound((EntityPlayer) null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.entity_snowball_throw,
                     SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
