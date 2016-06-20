@@ -16,7 +16,7 @@ public class cp {
 
     public static final String MODID = "cp";
     public static final String NAME = "Cold Potato";
-    public static final String VERSION = "0.1.2";
+    public static final String VERSION = "0.1.3";
 
     @SidedProxy(serverSide = "com.github.ArnorDorian.cp.common.CommonProxy", clientSide = "com.github.ArnorDorian.cp.client.ClientProxy")
     public static CommonProxy proxy;

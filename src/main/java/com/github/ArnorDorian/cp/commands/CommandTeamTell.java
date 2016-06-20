@@ -63,7 +63,7 @@ public class CommandTeamTell extends CommandBase {
 
                 for (String name : teamMembers) {
                     EntityPlayer member = server.getPlayerList().getPlayerByUsername(name);
-                    member.addChatMessage(textComponentTranslation);
+                    if (member != null) member.addChatMessage(textComponentTranslation);
                 }
             }
             if (((EntityPlayer) sender).getTeam() == null) {
@@ -71,7 +71,7 @@ public class CommandTeamTell extends CommandBase {
 
                 for (String name : allPlayerNames) {
                     EntityPlayer player = server.getPlayerList().getPlayerByUsername(name);
-                    if (player.getTeam() == null) player.addChatMessage(textComponentTranslation);
+                    if (player != null && player.getTeam() == null) player.addChatMessage(textComponentTranslation);
                 }
             }
         }

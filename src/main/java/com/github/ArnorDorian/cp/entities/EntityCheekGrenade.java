@@ -1,9 +1,12 @@
 package com.github.ArnorDorian.cp.entities;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 /**
@@ -13,6 +16,7 @@ public class EntityCheekGrenade extends EntityThrowable {
 
     public EntityCheekGrenade(World worldIn) {
         super(worldIn);
+        this.setSize(1.0F, 1.0F);
     }
 
     public EntityCheekGrenade(World worldIn, EntityLivingBase throwerIn) {
@@ -30,8 +34,32 @@ public class EntityCheekGrenade extends EntityThrowable {
 
     @Override
     protected void onImpact(RayTraceResult result) {
-        /*if (!worldObj.isRemote)*/this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, -3, false);
+        /*if (!worldObj.isRemote)*/
+        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, -3, false);
         this.setDead();
+    }
+
+    @Override
+    public boolean attackEntityFrom(DamageSource source, float amount) {
+        this.setBeenAttacked();
+
+        if (source.getEntity() != null) {
+
+            Vec3d vec3d = source.getEntity().getLookVec();
+
+            if (vec3d != null) {
+                this.motionX = vec3d.xCoord;
+                this.motionY = vec3d.yCoord;
+                this.motionZ = vec3d.zCoord;
+                /*this.accelerationX = this.motionX * 0.1D;
+                this.accelerationY = this.motionY * 0.1D;
+                this.accelerationZ = this.motionZ * 0.1D;*/
+            }
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
